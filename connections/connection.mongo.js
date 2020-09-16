@@ -14,14 +14,14 @@ module.exports = () => {
 
     const db = mongoose.connection;
     db.on('connected', () => {
-        console.log('We are connected to mongodb');
+        console.log('Connected to mongodb');
     });
     db.on('error', (err) => {
         console.log('Error connecting to mongodb ', err);
     });
 
     db.on('disconnect', () => {
-        console.log('Oops we are disconnected from mongodb');
+        console.log('Disconnected from mongodb');
     });
     const mongoDbUri = `mongodb://${username}:${password}@${host}:${port}/${database}?authSource=admin`;
     mongoose.connect(mongoDbUri, options);

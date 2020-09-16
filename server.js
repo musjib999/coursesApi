@@ -89,7 +89,6 @@ server.delete('/course/:id', (req, res) => {
 });
 
 
-
 //get all non existing endpoints
 server.get('*', (req, res) => {
     res.status(400).json({ status: 'Failed', payload: aboutApp, message: 'End point does not exist' });
